@@ -16,8 +16,11 @@ RSpec.describe "Tourist Site Facade" do
 
       expect(results).to be_a Array
 
-      results.each do |result|
-        expect(result).to be_a TouristSite
+      results.each do |site|
+        expect(site).to be_a TouristSite
+        expect(site.name).to_not be_nil
+        expect(site.address).to_not be_nil
+        expect(site.place_id).to_not be_nil
       end
     end
   end

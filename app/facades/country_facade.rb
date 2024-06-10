@@ -15,9 +15,9 @@ class CountryFacade
   private
   def format_country_data(country_data)
     {
-      name: country_data[:country],
-      lon: country_data[:lon],
-      lat: country_data[:lat]
+      name: country_data[:properties][:country],
+      lon: country_data[:properties][:lon],
+      lat: country_data[:properties][:lat]
     }
   end
 end
