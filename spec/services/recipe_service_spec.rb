@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "Recipe Service" do
+  it 'exists' do
+    service = RecipeService.new
+    expect(service).to be_a RecipeService
+  end
+
   describe '#conn' do
     it "establishes a Faraday connection" do
       service = RecipeService.new
