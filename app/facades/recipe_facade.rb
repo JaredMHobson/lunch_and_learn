@@ -25,7 +25,7 @@ class RecipeFacade
   def format_recipe_data(recipe_data)
     {
       title: recipe_data[:recipe][:label],
-      url: recipe_data[:recipe][:uri],
+      url: recipe_data[:recipe][:url],
       country: @search_params,
       image: recipe_data[:recipe][:image]
     }
