@@ -5,8 +5,7 @@ RSpec.describe "Country" do
     country_data = {
       name: 'country name',
       lon: 'country lon',
-      lat: 'country lat',
-      place_id: 'country place ID'
+      lat: 'country lat'
     }
 
     country = Country.new(country_data)
@@ -15,6 +14,5 @@ RSpec.describe "Country" do
     expect(country.name).to eq('country name')
     expect(country.lon).to eq('country lon')
     expect(country.lat).to eq('country lat')
-    expect(country.place_id).to eq('country place ID')
   end
 end

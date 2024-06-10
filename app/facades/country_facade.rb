@@ -17,8 +17,7 @@ class CountryFacade
     {
       name: country_data[:country],
       lon: country_data[:lon],
-      lat: country_data[:lat],
-      place_id: country_data[:place_id]
+      lat: country_data[:lat]
     }
   end
 end
