@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.geoapify.com/v1/geocode/search?apiKey=<GEOAPIFY_APP_KEY>&country=india
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.9.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 10 Jun 2024 15:15:05 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Api-Version:
+      - '1.0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Headers:
+      - accept, accept-language, content-language, access-control-max-age, access-control-allow-headers,
+        access-control-allow-methods, access-control-allow-origin, allow, api-version,
+        cf-ray, content-encoding, content-type, date, expect-ct, server, status, vary,
+        cache-control, etag, last-modified, expires, host, cf-region-code, cf-timezone,
+        accept-encoding, x-forwarded-for, x-forwarded-proto, cf-visitor, user-agent,
+        cf-connecting-ip, cdn-loop, cf-ipcity, cf-ipcontinent, cf-ipcountry, cf-iplatitude,
+        cf-iplongitude, cf-metro-code, cf-postal-code, cf-region, x-forwarded-port
+      Access-Control-Allow-Methods:
+      - GET, POST, DELETE, OPTIONS, PUT
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Vary:
+      - Accept-Encoding
+      Cache-Control:
+      - private, max-age=0, no-cache
+      Content-Disposition:
+      - inline; filename=response.geojson
+      Cf-Cache-Status:
+      - DYNAMIC
+      Report-To:
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v4?s=Hp0fxD99gnOCB7xDUJIhXLwKnwmuQKWo8PEaMDNxh82wY55jvKB%2FjpqJwMLBhFhtJmJm5Mwmvvq6uVP2LmkmO3UuHNgH0SMC%2Fu98UOkT%2BeloWZOCvcwFwMAywtvpHeI4vP8%3D"}],"group":"cf-nel","max_age":604800}'
+      Nel:
+      - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 891a509159e0318b-LAX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ0eXBlIjoiRmVhdHVyZUNvbGxlY3Rpb24iLCJmZWF0dXJlcyI6W3sidHlwZSI6IkZlYXR1cmUiLCJwcm9wZXJ0aWVzIjp7ImRhdGFzb3VyY2UiOnsic291cmNlbmFtZSI6Im9wZW5zdHJlZXRtYXAiLCJhdHRyaWJ1dGlvbiI6IsKpIE9wZW5TdHJlZXRNYXAgY29udHJpYnV0b3JzIiwibGljZW5zZSI6Ik9wZW4gRGF0YWJhc2UgTGljZW5zZSIsInVybCI6Imh0dHBzOi8vd3d3Lm9wZW5zdHJlZXRtYXAub3JnL2NvcHlyaWdodCJ9LCJjb3VudHJ5IjoiSW5kaWEiLCJjb3VudHJ5X2NvZGUiOiJpbiIsImxvbiI6NzguNjY3NzQyOCwibGF0IjoyMi4zNTExMTQ4LCJyZXN1bHRfdHlwZSI6ImNvdW50cnkiLCJmb3JtYXR0ZWQiOiJJbmRpYSIsImFkZHJlc3NfbGluZTEiOiJJbmRpYSIsImFkZHJlc3NfbGluZTIiOiIiLCJjYXRlZ29yeSI6ImFkbWluaXN0cmF0aXZlIiwidGltZXpvbmUiOnsibmFtZSI6IkFzaWEvS29sa2F0YSIsIm9mZnNldF9TVEQiOiIrMDU6MzAiLCJvZmZzZXRfU1REX3NlY29uZHMiOjE5ODAwLCJvZmZzZXRfRFNUIjoiKzA1OjMwIiwib2Zmc2V0X0RTVF9zZWNvbmRzIjoxOTgwMCwiYWJicmV2aWF0aW9uX1NURCI6IklTVCIsImFiYnJldmlhdGlvbl9EU1QiOiJJU1QifSwicGx1c19jb2RlIjoiN0pKVzlNMjkrQzMiLCJyYW5rIjp7ImltcG9ydGFuY2UiOjAuOTQ3Njg5MTM1ODgwOTg3LCJwb3B1bGFyaXR5IjowLjc5MTA3Mjc1MzA2MDMyOTIsImNvbmZpZGVuY2UiOjEsIm1hdGNoX3R5cGUiOiJtYXRjaF9ieV9jb3VudHJ5X29yX3N0YXRlIn0sInBsYWNlX2lkIjoiNTFlZDA4NGM0Y2JjYWE1MzQwNTkzZjI0ZDdhOGUyNTkzNjQwZjAwMTAxZjkwMTRjYTYwNDAwMDAwMDAwMDBjMDAyMGIifSwiZ2VvbWV0cnkiOnsidHlwZSI6IlBvaW50IiwiY29vcmRpbmF0ZXMiOls3OC42Njc3NDI4LDIyLjM1MTExNDhdfSwiYmJveCI6WzY3Ljk1NDQ0MTUsNi41NTMxMTY5LDk3LjM5NTU2MSwzNS42NzQ1NDU3XX1dLCJxdWVyeSI6eyJ0ZXh0IjoiIiwiY291bnRyeSI6ImluZGlhIiwicGFyc2VkIjp7ImNvdW50cnkiOiJpbmRpYSIsImV4cGVjdGVkX3R5cGUiOiJ1bmtub3duIn19fQ==
+  recorded_at: Mon, 10 Jun 2024 15:15:05 GMT
+recorded_with: VCR 6.2.0
