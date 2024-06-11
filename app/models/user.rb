@@ -4,6 +4,8 @@ class User < ApplicationRecord
   validates_presence_of :password
   has_secure_password
 
+  has_many :favorites
+
   before_create :generate_api_key
 
 
