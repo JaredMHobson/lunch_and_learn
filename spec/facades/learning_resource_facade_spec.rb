@@ -1,39 +1,50 @@
 require 'rails_helper'
 
-RSpec.describe "Recipe Facade" do
+RSpec.describe "Learning Resource Facade" do
   it 'exists and has attributes' do
-    facade = RecipeFacade.new
+    facade = LearningResourceFacade.new('india')
 
-    expect(facade.instance_variable_get(:@service)).to be_a RecipeService
-    expect(facade.instance_variable_get(:@search_params)).to eq nil
+    expect(facade.instance_variable_get(:@video_service)).to be_a LearningVideoService
+    expect(facade.instance_variable_get(:@image_service)).to be_a LearningImageService
+    expect(facade.instance_variable_get(:@country)).to eq('india')
   end
 
-  describe '#search_recipes' do
-    it "returns an array of Recipe objects", :vcr do
-      facade = RecipeFacade.new(search_params: 'india')
-      results = facade.search_recipes
+  describe '#learning_resource_for_country' do
+    it "returns a single LearningResource for the country passed on initialization", :vcr do
+      country = 'india'
 
-      expect(results).to be_a Array
+      facade = LearningResourceFacade.new(country)
+      result = facade.learning_resource_for_country
 
-      results.each do |result|
-        expect(result).to be_a Recipe
-      end
+      expect(result).to be_a LearningResource
+
+      expect(result.id).to be nil
+      expect(result.country).to eq(country)
+      expect(result.video).to_not be nil
+      expect(result.video).to be_a Hash
+      expect(result.images).to_not be nil
+      expect(result.images).to be_a Array
+      expect(result.images.count).to eq(10)
     end
 
-    it 'returns an empty array if the search params are empty', :vcr do
-      facade = RecipeFacade.new(search_params: '')
-      results = facade.search_recipes
+    it 'returns an empty hash for video if no videos are found for that country', :vcr do
+      country = 'ajdslakasjdlfkjlk2334023jkldf'
 
-      expect(results).to be_a Array
-      expect(results).to be_empty
+      facade = LearningResourceFacade.new(country)
+      result = facade.learning_resource_for_country
+
+      expect(result).to be_a LearningResource
+      expect(result.video).to eq({})
     end
 
-    it 'returns an empty array if the search does not return any results', :vcr do
-      facade = RecipeFacade.new(search_params: 'aklsdjflksdjflkj2ljf30fjkoadsjfkl2323f')
-      results = facade.search_recipes
+    it 'returns an empty array for images if no images are found for that country', :vcr do
+      country = 'ajdslakasjdlfkjlk2334023jkldf'
 
-      expect(results).to be_a Array
-      expect(results).to be_empty
+      facade = LearningResourceFacade.new(country)
+      result = facade.learning_resource_for_country
+
+      expect(result).to be_a LearningResource
+      expect(result.images).to eq([])
     end
   end
 end
