@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       get 'learning_resources', to: 'learning_resources#search'
       resources :users, only: [:create]
       resources :sessions, only: [:create]
-      resources :favorites, only: [:create]
+      resources :favorites, only: [:create, :index]
     end
   end
   # Defines the root path route ("/")

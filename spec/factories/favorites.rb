@@ -3,6 +3,6 @@ FactoryBot.define do
     country { "MyString" }
     recipe_link { "MyString" }
     recipe_title { "MyString" }
-    user { nil }
+    association :user
   end
 end
